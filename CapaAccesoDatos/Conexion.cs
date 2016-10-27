@@ -22,7 +22,6 @@ namespace CapaAccesoDatos
         {
             SqlConnection cn = new SqlConnection();
             cn.ConnectionString = "Data Source=diarsramirezmontes.database.windows.net; Initial Catalog=SistemaClinica;" +
-                                "Integrated Security=true" +
                                 "User ID=rramirez; Password=Raul1995";
             return cn;
         }
