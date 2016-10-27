@@ -1,0 +1,14 @@
+D:\Proyecto_DIARS\ProyectoSistemaClinica\SistemaClincaProdent\CapaAccesoDatos\bin\Debug\CapaAccesoDatos.dll
+D:\Proyecto_DIARS\ProyectoSistemaClinica\SistemaClincaProdent\CapaAccesoDatos\bin\Debug\CapaAccesoDatos.pdb
+D:\Proyecto_DIARS\ProyectoSistemaClinica\SistemaClincaProdent\CapaAccesoDatos\bin\Debug\CapaEntidades.dll
+D:\Proyecto_DIARS\ProyectoSistemaClinica\SistemaClincaProdent\CapaAccesoDatos\bin\Debug\CapaEntidades.pdb
+D:\Proyecto_DIARS\ProyectoSistemaClinica\SistemaClincaProdent\CapaAccesoDatos\obj\Debug\CapaAccesoDatos.csprojResolveAssemblyReference.cache
+D:\Proyecto_DIARS\ProyectoSistemaClinica\SistemaClincaProdent\CapaAccesoDatos\obj\Debug\CapaAccesoDatos.dll
+D:\Proyecto_DIARS\ProyectoSistemaClinica\SistemaClincaProdent\CapaAccesoDatos\obj\Debug\CapaAccesoDatos.pdb
+D:\Proyecto_DIARS\Repo\CapaAccesoDatos\bin\Debug\CapaAccesoDatos.dll
+D:\Proyecto_DIARS\Repo\CapaAccesoDatos\bin\Debug\CapaAccesoDatos.pdb
+D:\Proyecto_DIARS\Repo\CapaAccesoDatos\bin\Debug\CapaEntidades.dll
+D:\Proyecto_DIARS\Repo\CapaAccesoDatos\bin\Debug\CapaEntidades.pdb
+D:\Proyecto_DIARS\Repo\CapaAccesoDatos\obj\Debug\CapaAccesoDatos.csprojResolveAssemblyReference.cache
+D:\Proyecto_DIARS\Repo\CapaAccesoDatos\obj\Debug\CapaAccesoDatos.dll
+D:\Proyecto_DIARS\Repo\CapaAccesoDatos\obj\Debug\CapaAccesoDatos.pdb
