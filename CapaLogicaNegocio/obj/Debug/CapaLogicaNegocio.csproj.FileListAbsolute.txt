@@ -16,3 +16,12 @@ D:\Proyecto_DIARS\Repo\CapaLogicaNegocio\bin\Debug\CapaEntidades.pdb
 D:\Proyecto_DIARS\Repo\CapaLogicaNegocio\obj\Debug\CapaLogicaNegocio.csprojResolveAssemblyReference.cache
 D:\Proyecto_DIARS\Repo\CapaLogicaNegocio\obj\Debug\CapaLogicaNegocio.dll
 D:\Proyecto_DIARS\Repo\CapaLogicaNegocio\obj\Debug\CapaLogicaNegocio.pdb
+D:\Proyecto_DIARS\Repositorio Github\CapaLogicaNegocio\bin\Debug\CapaLogicaNegocio.dll
+D:\Proyecto_DIARS\Repositorio Github\CapaLogicaNegocio\bin\Debug\CapaLogicaNegocio.pdb
+D:\Proyecto_DIARS\Repositorio Github\CapaLogicaNegocio\bin\Debug\CapaAccesoDatos.dll
+D:\Proyecto_DIARS\Repositorio Github\CapaLogicaNegocio\bin\Debug\CapaEntidades.dll
+D:\Proyecto_DIARS\Repositorio Github\CapaLogicaNegocio\bin\Debug\CapaAccesoDatos.pdb
+D:\Proyecto_DIARS\Repositorio Github\CapaLogicaNegocio\bin\Debug\CapaEntidades.pdb
+D:\Proyecto_DIARS\Repositorio Github\CapaLogicaNegocio\obj\Debug\CapaLogicaNegocio.csprojResolveAssemblyReference.cache
+D:\Proyecto_DIARS\Repositorio Github\CapaLogicaNegocio\obj\Debug\CapaLogicaNegocio.dll
+D:\Proyecto_DIARS\Repositorio Github\CapaLogicaNegocio\obj\Debug\CapaLogicaNegocio.pdb

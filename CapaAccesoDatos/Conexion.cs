@@ -23,6 +23,9 @@ namespace CapaAccesoDatos
             SqlConnection cn = new SqlConnection();
             cn.ConnectionString = "Data Source=diarsramirezmontes.database.windows.net; Initial Catalog=SistemaClinica;" +
                                 "User ID=rramirez; Password=Raul1995";
+            //cn.ConnectionString = "Data Source=.; Initial Catalog=SistemaClinica;" +
+            //                   "Integrated Security=true";
+            ////"User ID=sa; Password=123";
             return cn;
         }
         #endregion metodos

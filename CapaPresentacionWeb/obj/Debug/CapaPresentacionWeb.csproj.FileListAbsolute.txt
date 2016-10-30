@@ -82,3 +82,46 @@ D:\Proyecto_DIARS\Repo\CapaPresentacionWeb\bin\es\System.Web.WebPages.Razor.reso
 D:\Proyecto_DIARS\Repo\CapaPresentacionWeb\obj\Debug\CapaPresentacionWeb.csprojResolveAssemblyReference.cache
 D:\Proyecto_DIARS\Repo\CapaPresentacionWeb\obj\Debug\CapaPresentacionWeb.dll
 D:\Proyecto_DIARS\Repo\CapaPresentacionWeb\obj\Debug\CapaPresentacionWeb.pdb
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\bin\CapaPresentacionWeb.dll.config
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\bin\CapaPresentacionWeb.dll
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\bin\CapaPresentacionWeb.pdb
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\bin\CapaEntidades.dll
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\bin\CapaLogicaNegocio.dll
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\bin\Microsoft.Web.Infrastructure.dll
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\bin\Newtonsoft.Json.dll
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\bin\System.Net.Http.Formatting.dll
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\bin\System.Web.Helpers.dll
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\bin\System.Web.Http.dll
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\bin\System.Web.Http.WebHost.dll
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\bin\System.Web.Mvc.dll
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\bin\System.Web.Razor.dll
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\bin\System.Web.WebPages.Deployment.dll
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\bin\System.Web.WebPages.dll
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\bin\System.Web.WebPages.Razor.dll
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\bin\CapaAccesoDatos.dll
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\bin\CapaEntidades.pdb
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\bin\CapaLogicaNegocio.pdb
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\bin\Newtonsoft.Json.xml
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\bin\System.Net.Http.Formatting.xml
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\bin\System.Web.Helpers.xml
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\bin\System.Web.Http.xml
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\bin\System.Web.Http.WebHost.xml
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\bin\System.Web.Mvc.xml
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\bin\System.Web.Razor.xml
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\bin\System.Web.WebPages.xml
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\bin\System.Web.WebPages.Deployment.xml
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\bin\System.Web.WebPages.Razor.xml
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\bin\CapaAccesoDatos.pdb
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\bin\es\System.Net.Http.Formatting.resources.dll
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\bin\es\System.Web.Helpers.resources.dll
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\bin\es\System.Web.Http.resources.dll
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\bin\es\System.Web.Http.WebHost.resources.dll
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\bin\es\System.Web.Mvc.resources.dll
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\bin\es\System.Web.Razor.resources.dll
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\bin\es\System.Web.WebPages.resources.dll
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\bin\es\System.Web.WebPages.Deployment.resources.dll
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\bin\es\System.Web.WebPages.Razor.resources.dll
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\obj\Debug\CapaPresentacionWeb.csprojResolveAssemblyReference.cache
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\obj\Debug\CapaPresentacionWeb.dll
+D:\Proyecto_DIARS\Repositorio Github\CapaPresentacionWeb\obj\Debug\CapaPresentacionWeb.pdb
