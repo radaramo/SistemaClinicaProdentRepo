@@ -1,0 +1,150 @@
+﻿@model IEnumerable<CapaEntidades.entPaciente>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/MasterPrincipal.cshtml";
+}
+@section scripts {
+    <script type="text/javascript">
+        $(function () {
+            fn_init();
+        });
+        function fn_init() {
+            var mensjbag = "@ViewBag.mensaje"
+            fn_wellmensajes(mensjbag);
+        }
+        function fn_wellmensajes(val) {
+            switch (val) {
+                case "Guardar":
+                    fn_custommessage("s", "Se guardo satisfactoriamente", "message_row");
+                    break;
+                case "Editar":
+                    fn_custommessage("s", "Se edito satisfactoriamente", "message_row");
+                    break;
+                case "Eliminar":
+                    fn_custommessage("s", "Se elimino satisfactoriamente", "message_row");
+                    break;
+                case "Error":
+                    fn_custommessage("e", "A ocurrido un error mientras cargaban los datos", "message_row");
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <section class="panel">
+            <div id="message_row"> 
+            </div>
+            <header class="panel-heading">
+                <h2 class="panel-title">Pacientes</h2>
+            </header>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <a class="mb-xs mt-xs mr-xs btn btn-primary" href="@Url.Action("Nuevo", "Paciente")" id="add_paciente"><i class="fa fa-plus"></i><span>&nbsp;Agregar</span> </a>
+                        @*<a class="mb-xs mt-xs mr-xs btn btn-danger" onclick="fn_delete2()" id="delete_contact"><i class="fa fa-times"></i><span>&nbsp;Delete</span> </a>*@
+                    </div>
+                </div>
+                <table class="table table-bordered table-striped mb-none" id="datatable-default">
+                    <thead>
+                        <tr>
+                            @*<th>
+                                @Html.DisplayNameFor(model => model.idPaciente)
+                            </th>*@
+                            <th>#</th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Nombres)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Apellidos)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Dni)
+                            </th>
+                            @*<th>
+                                    @Html.DisplayNameFor(model => model.FechaNacimiento)
+                                </th>*@
+                            <th>
+                                @Html.DisplayNameFor(model => model.Edad)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Sexo)
+                            </th>
+                            @*<th>
+                                    @Html.DisplayNameFor(model => model.Correo)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Telefono)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Celular)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Estado)
+                                </th>*@
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        @{ int index=0;
+                        foreach (var item in Model)
+                        {
+                            index++;
+                            <tr>
+                                @*<td>
+                                    @Html.DisplayFor(modelItem => item.idPaciente)
+                                </td>*@
+                                <td>@index</td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Nombres)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Apellidos)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Dni)
+                                </td>
+                                @*<td>
+                                        @Html.DisplayFor(modelItem => item.FechaNacimiento)
+                                    </td>*@
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Edad)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Sexo)
+                                </td>
+                                @*<td>
+                                        @Html.DisplayFor(modelItem => item.Correo)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Telefono)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Celular)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Estado)
+                                    </td>*@
+                                <td>
+                                    @*@Html.ActionLink("Editar", "Edit", new { /* id=item.PrimaryKey */ }) |
+                                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                                    @Html.ActionLink("Eliminar", "Delete", new { /* id=item.PrimaryKey */ })*@
+                                    <a href="@Url.Action("Editar", "Paciente", new { id = item.idPaciente })" class="on-default edit-row" title="Editar"><i class="fa fa-pencil"></i></a>
+                                    <a href="@Url.Action("Eliminar", "Paciente", new { id = item.idPaciente })" class="on-default remove-row" title="Remover"><i class="fa fa-trash-o"></i></a>
+                                </td>
+                            </tr>
+                        }
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+        </section>
+        </div>
+    </div>
+

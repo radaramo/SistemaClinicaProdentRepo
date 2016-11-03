@@ -110,6 +110,7 @@
   <ItemGroup>
     <Compile Include="Controllers\InicioController.cs" />
     <Compile Include="Controllers\IntranetController.cs" />
+    <Compile Include="Controllers\PacienteController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -253,6 +254,7 @@
     <Content Include="Estilos\Intranet\ajax\ajax-treeview-nodes.html" />
     <Content Include="Estilos\Intranet\ajax\ui-elements-lightbox-ajax.html" />
     <Content Include="Estilos\Intranet\ajax\ui-elements-modals-ajax.html" />
+    <Content Include="Estilos\Intranet\base.js" />
     <Content Include="Estilos\Intranet\images\!happy-face.png" />
     <Content Include="Estilos\Intranet\images\!logged-user.jpg" />
     <Content Include="Estilos\Intranet\images\!sample-user.jpg" />
@@ -2088,6 +2090,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Intranet\Principal.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Paciente\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Paciente\Nuevo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Paciente\Editar.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Paciente\Eliminar.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

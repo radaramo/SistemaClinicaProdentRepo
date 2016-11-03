@@ -1,0 +1,150 @@
+﻿@model CapaEntidades.entPaciente
+
+@{
+    ViewBag.Title = "Editar";
+    Layout = "~/Views/MasterPrincipal.cshtml";
+}
+@section scripts {
+    <script type="text/javascript">
+        $(function () {
+            fn_init();
+        });
+        function fn_init() {
+            fn_plugin();
+        }
+        function fn_plugin() {
+            $(".txtFechaNacimiento").datepicker({
+                format: 'dd/mm/yyyy',
+                changeMonth: true,
+                changeYear: true
+            });
+        }
+    </script>
+}
+<div class="row">
+    <div class="col-xs-12">
+        <section class="panel">
+            <header class="panel-heading">
+                <h2 class="panel-title">Editar Paciente</h2>
+            </header>
+            <div class="panel-body">
+                <div class="form-horizontal form-bordered">
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true)
+
+                        <fieldset>
+                            <div class="editor-label" style="display:none">
+                                @Html.LabelFor(model => model.idPaciente)
+                            </div>
+                            <div class="editor-field" style="display:none">
+                                @Html.EditorFor(model => model.idPaciente)
+                                @Html.ValidationMessageFor(model => model.idPaciente)
+                            </div>
+
+                            <div class="form-group">
+                                <div class="editor-label">
+                                    @Html.LabelFor(model => model.Nombres, new { @class = "col-md-3 control-label" })
+                                </div>
+
+                                <div class="editor-field col-md-6">
+                                    @Html.TextBoxFor(model => model.Nombres, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Nombres)
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="editor-label">
+                                    @Html.LabelFor(model => model.Apellidos, new { @class = "col-md-3 control-label" })
+                                </div>
+                                <div class="editor-field col-md-6">
+                                    @Html.TextBoxFor(model => model.Apellidos, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Apellidos)
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="editor-label">
+                                    @Html.LabelFor(model => model.Dni, new { @class = "col-md-3 control-label" })
+                                </div>
+                                <div class="editor-field col-md-6">
+                                    @Html.TextBoxFor(model => model.Dni, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Dni)
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="editor-label">
+                                    @Html.LabelFor(model => model.Direccion, new { @class = "col-md-3 control-label" })
+                                </div>
+                                <div class="editor-field col-md-6">
+                                    @Html.TextBoxFor(model => model.Direccion, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Direccion)
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="editor-label">
+                                    @Html.LabelFor(model => model.FechaNacimiento, new { @class = "col-md-3 control-label" })
+                                </div>
+                                <div class="editor-field col-md-6">
+                                    @Html.TextBoxFor(model => model.FechaNacimiento, "{0:dd/MM/yyyy}" , new { @class = "form-control txtFechaNacimiento" })
+                                    @Html.ValidationMessageFor(model => model.FechaNacimiento)
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="editor-label">
+                                    @Html.LabelFor(model => model.Edad, new { @class = "col-md-3 control-label" })
+                                </div>
+                                <div class="editor-field col-md-6">
+                                    @Html.TextBoxFor(model => model.Edad, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Edad)
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="editor-label">
+                                    @Html.LabelFor(model => model.Sexo, new { @class = "col-md-3 control-label" })
+                                </div>
+                                <div class="editor-field col-md-6">
+                                    @Html.TextBoxFor(model => model.Sexo, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Sexo)
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="editor-label">
+                                    @Html.LabelFor(model => model.Correo, new { @class = "col-md-3 control-label" })
+                                </div>
+                                <div class="editor-field col-md-6">
+                                    @Html.TextBoxFor(model => model.Correo, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Correo)
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="editor-label">
+                                    @Html.LabelFor(model => model.Telefono, new { @class = "col-md-3 control-label" })
+                                </div>
+                                <div class="editor-field col-md-6">
+                                    @Html.TextBoxFor(model => model.Telefono, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Telefono)
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="editor-label">
+                                    @Html.LabelFor(model => model.Celular, new { @class = "col-md-3 control-label" })
+                                </div>
+                                <div class="editor-field col-md-6">
+                                    @Html.TextBoxFor(model => model.Celular, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Celular)
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-sm-offset-3">
+                                <input type="submit" class="mb-xs mt-xs mr-xs btn btn-lg btn-primary" value="Guardar" />
+                                <a class="mb-xs mt-xs mr-xs btn btn-lg btn-default" href="@Url.Action("Index", "Paciente")">Regresar</a>
+                            </div>
+                        </fieldset>
+                    }
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+

@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="/Estilos/Intranet/vendor/jquery-ui/css/ui-lightness/jquery-ui-1.10.4.custom.css" />
     <link rel="stylesheet" href="/Estilos/Intranet/vendor/bootstrap-multiselect/bootstrap-multiselect.css" />
     <link rel="stylesheet" href="/Estilos/Intranet/vendor/morris/morris.css" />
+    <link rel="stylesheet" href="/Estilos/Intranet/vendor/select2/select2.css" />
+    <link rel="stylesheet" href="/Estilos/Intranet/vendor/jquery-datatables-bs3/assets/css/datatables.css" />
 
     <!-- Theme CSS -->
     <link rel="stylesheet" href="/Estilos/Intranet/stylesheets/theme.css" />
@@ -38,6 +40,16 @@
 
     <!-- Head Libs -->
     <script src="/Estilos/Intranet/vendor/modernizr/modernizr.js"></script>
+
+    <script src="/Estilos/Intranet/vendor/jquery/jquery.js"></script>
+    <script src="/Estilos/Intranet/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
+    <script src="/Estilos/Intranet/vendor/bootstrap/js/bootstrap.js"></script>
+    <script src="/Estilos/Intranet/vendor/nanoscroller/nanoscroller.js"></script>
+    <script src="/Estilos/Intranet/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="/Estilos/Intranet/vendor/magnific-popup/magnific-popup.js"></script>
+    <script src="/Estilos/Intranet/vendor/jquery-placeholder/jquery.placeholder.js"></script>
+
+    @RenderSection("scripts", required: false)
 
 </head>
 <body>
@@ -59,7 +71,7 @@
 
                 <form action="pages-search-results.html" class="search nav-form">
                     <div class="input-group input-search">
-                        <input type="text" class="form-control" name="q" id="q" placeholder="Search...">
+                        <input type="text" class="form-control" name="q" id="q" placeholder="Buscar...">
                         <span class="input-group-btn">
                             <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
                         </span>
@@ -248,13 +260,13 @@
                         <ul class="list-unstyled">
                             <li class="divider"></li>
                             <li>
-                                <a role="menuitem" tabindex="-1" href="pages-user-profile.html"><i class="fa fa-user"></i> My Profile</a>
+                                <a role="menuitem" tabindex="-1" href="pages-user-profile.html"><i class="fa fa-user"></i> Mi Perfil</a>
                             </li>
                             <li>
-                                <a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> Lock Screen</a>
+                                <a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i>Pantalla Bloqueada</a>
                             </li>
                             <li>
-                                <a role="menuitem" tabindex="-1" href="pages-signin.html"><i class="fa fa-power-off"></i> Logout</a>
+                                <a role="menuitem" tabindex="-1" href="@Url.Action("CerrarSesion", "Intranet")"><i class="fa fa-power-off"></i>Cerrar Sesion</a>
                             </li>
                         </ul>
                     </div>
@@ -270,7 +282,7 @@
 
                 <div class="sidebar-header">
                     <div class="sidebar-title">
-                        Navigation
+                        Navegacion
                     </div>
                     <div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
                         <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
@@ -282,16 +294,16 @@
                         <nav id="menu" class="nav-main" role="navigation">
                             <ul class="nav nav-main">
                                 <li class="nav-active">
-                                    <a href="index.html">
+                                    <a href="@Url.Action("Principal", "Intranet")">
                                         <i class="fa fa-home" aria-hidden="true"></i>
                                         <span>Inicio</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="mailbox-folder.html">
+                                    <a href="@Url.Action("Index", "Paciente")">
                                         @*<span class="pull-right label label-primary">182</span>*@
-                                        <i class="fa fa-envelope" aria-hidden="true"></i>
-                                        <span>Matenedores</span>
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        <span>Pacientes</span>
                                     </a>
                                 </li>
                                 @*<li class="nav-parent nav-expanded nav-active">*@
@@ -689,7 +701,7 @@
                 </header>
 
                 <!-- start: page -->
-                @RenderBody()
+                @RenderBody()      
                 <!-- end: page -->
             </section>
         </div>
@@ -764,13 +776,6 @@
     </section>
 
     <!-- Vendor -->
-    <script src="/Estilos/Intranet/vendor/jquery/jquery.js"></script>
-    <script src="/Estilos/Intranet/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
-    <script src="/Estilos/Intranet/vendor/bootstrap/js/bootstrap.js"></script>
-    <script src="/Estilos/Intranet/vendor/nanoscroller/nanoscroller.js"></script>
-    <script src="/Estilos/Intranet/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-    <script src="/Estilos/Intranet/vendor/magnific-popup/magnific-popup.js"></script>
-    <script src="/Estilos/Intranet/vendor/jquery-placeholder/jquery.placeholder.js"></script>
     <!-- Specific Page Vendor -->
     <script src="/Estilos/Intranet/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js"></script>
     <script src="/Estilos/Intranet/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js"></script>
@@ -797,7 +802,14 @@
     <script src="/Estilos/Intranet/vendor/jqvmap/maps/continents/jquery.vmap.europe.js"></script>
     <script src="/Estilos/Intranet/vendor/jqvmap/maps/continents/jquery.vmap.north-america.js"></script>
     <script src="/Estilos/Intranet/vendor/jqvmap/maps/continents/jquery.vmap.south-america.js"></script>
-    <!-- Theme Base, Components and Settings -->
+   
+    <!-- Specific Page Vendor -->
+    <script src="/Estilos/Intranet/vendor/select2/select2.js"></script>
+    <script src="/Estilos/Intranet/vendor/jquery-datatables/media/js/jquery.dataTables.js"></script>
+    <script src="/Estilos/Intranet/vendor/jquery-datatables/extras/TableTools/js/dataTables.tableTools.min.js"></script>
+    <script src="/Estilos/Intranet/vendor/jquery-datatables-bs3/assets/js/datatables.js"></script>
+    
+     <!-- Theme Base, Components and Settings -->
     <script src="/Estilos/Intranet/javascripts/theme.js"></script>
 
     <!-- Theme Custom -->
@@ -808,6 +820,10 @@
 
     <!-- Examples -->
     <script src="/Estilos/Intranet/javascripts/dashboard/examples.dashboard.js"></script>
+    <script src="/Estilos/Intranet/javascripts/tables/examples.datatables.default.js"></script>
+    <script src="/Estilos/Intranet/javascripts/tables/examples.datatables.row.with.details.js"></script>
+    <script src="/Estilos/Intranet/javascripts/tables/examples.datatables.tabletools.js"></script>
+    <script src="/Estilos/Intranet/base.js"></script>
 
 </body>
 </html>

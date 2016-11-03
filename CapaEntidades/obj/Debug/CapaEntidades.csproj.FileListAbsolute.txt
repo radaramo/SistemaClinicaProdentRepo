@@ -6,3 +6,7 @@ D:\Proyecto_DIARS\Repo\CapaEntidades\bin\Debug\CapaEntidades.dll
 D:\Proyecto_DIARS\Repo\CapaEntidades\bin\Debug\CapaEntidades.pdb
 D:\Proyecto_DIARS\Repo\CapaEntidades\obj\Debug\CapaEntidades.dll
 D:\Proyecto_DIARS\Repo\CapaEntidades\obj\Debug\CapaEntidades.pdb
+D:\Proyecto_DIARS\Repositorio Github\CapaEntidades\bin\Debug\CapaEntidades.dll
+D:\Proyecto_DIARS\Repositorio Github\CapaEntidades\bin\Debug\CapaEntidades.pdb
+D:\Proyecto_DIARS\Repositorio Github\CapaEntidades\obj\Debug\CapaEntidades.dll
+D:\Proyecto_DIARS\Repositorio Github\CapaEntidades\obj\Debug\CapaEntidades.pdb

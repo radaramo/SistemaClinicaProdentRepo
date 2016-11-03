@@ -45,7 +45,14 @@ namespace CapaPresentacionWeb.Controllers
 
         public ActionResult Principal()
         {
-            return View();
+               return View();
+        }
+
+        public ActionResult CerrarSesion()
+        {
+                Session.Abandon();
+                Session.Remove("usuario");
+            return RedirectToAction("Login", "Intranet");
         }
 
     }
