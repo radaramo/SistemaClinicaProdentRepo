@@ -40,6 +40,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
+    <Compile Include="datCitaMedica.cs" />
+    <Compile Include="datConsultasMedicas.cs" />
+    <Compile Include="datMedico.cs" />
     <Compile Include="datPaciente.cs" />
     <Compile Include="datUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

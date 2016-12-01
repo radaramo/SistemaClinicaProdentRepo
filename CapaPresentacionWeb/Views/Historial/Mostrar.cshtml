@@ -1,0 +1,56 @@
+﻿@model CapaEntidades.entConsultaMedica
+    @{
+        ViewBag.Title = "Mostrar";
+        Layout = "~/Views/MasterPrincipal.cshtml";
+    }
+
+    <div class="row">
+        <div class="col-xs-12">
+            <section class="panel">
+                <div id="message_row">
+                </div>
+                <header class="panel-heading">
+                    <h2 class="panel-title">Historial Clinico Paciente</h2>
+                </header>
+                <div class="panel-body">
+                    <div class="form-horizontal form-bordered">
+                        <form method="post" action="Mostrar" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="inputPlaceholder">Fecha: </label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" name="txtFechaHistorial" id="txtFechaHsitorial" value="@Model.Fecha.ToShortDateString()" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="textareaDefault">Sintomas</label>
+                                <div class="col-md-6">
+                                    <textarea class="form-control" name="txtSintomas"  rows="3" data-plugin-maxlength="" maxlength="140" style="margin-top: 0px; margin-bottom: 0px; height: 93px;"disabled>@Model.Sintomas</textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="textareaDefault">Examenes</label>
+                                <div class="col-md-6">
+                                    <textarea class="form-control" name="txtExamenes" rows="3" data-plugin-maxlength="" maxlength="140" style="margin-top: 0px; margin-bottom: 0px; height: 93px;" disabled>@Model.Examenes</textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="textareaDefault">Tratamiento</label>
+                                <div class="col-md-6">
+                                    <textarea class="form-control" name="txtTratamiento" rows="3" data-plugin-maxlength="" maxlength="140" style="margin-top: 0px; margin-bottom: 0px; height: 93px;" disabled>@Model.Tratamiento</textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="textareaDefault">Observaciones</label>
+                                <div class="col-md-6">
+                                    <textarea class="form-control" name="txtObservaciones" rows="3" data-plugin-maxlength="" maxlength="140" style="margin-top: 0px; margin-bottom: 0px; height: 93px;" disabled>@Model.Observaciones</textarea>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-sm-offset-3">
+                                <a class="mb-xs mt-xs mr-xs btn btn-lg btn-default" href="javascript:history.back(-1);">Regresar</a>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+            </section>
+            </div>
+    </div>

@@ -1,0 +1,116 @@
+﻿@model IEnumerable<CapaEntidades.entCitaMedica>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/MasterPrincipal.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <section class="panel">
+            <div id="message_row">
+            </div>
+            <header class="panel-heading">
+                <h2 class="panel-title">Consultas Medicas</h2>
+            </header>
+            <div class="panel-body">
+                @*<div class="row">
+                    <div class="col-md-6">
+                        <a class="mb-xs mt-xs mr-xs btn btn-primary" href="@Url.Action("Nuevo","CitasMedicas")" id="add_paciente"><i class="fa fa-plus"></i><span>&nbsp;Agregar</span></a>
+                    </div>
+                </div>*@
+                <table class="table table-bordered table-striped mb-none" id="datatable-default">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            @*<th>
+                    @Html.DisplayNameFor(model => model.idCitaMedica)
+                </th>*@
+                            <th>
+                                @Html.DisplayNameFor(model => model.Paciente)
+                            </th>
+                            @*<th>
+                    @Html.DisplayNameFor(model => model.Fecha)
+                </th>*@
+                            <th>
+                                @Html.DisplayNameFor(model => model.Hora)
+                            </th>
+                            @*<th>
+                    @Html.DisplayNameFor(model => model.Descripcion)
+                </th>*@
+                            <th>
+                                @Html.DisplayNameFor(model => model.TipoConsulta)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.EstadoCita)
+                            </th>
+                            @*<th>
+                    @Html.DisplayNameFor(model => model.Estado)
+                </th>*@
+                            <th></th>
+                        </tr>
+                  </thead>
+                    <tbody>
+                        @{int indice = 0;
+                        foreach (var item in Model)
+                        {
+                            indice++;
+                            <tr>
+                                <td>@indice</td>
+                                @*<td>
+                        @Html.DisplayFor(modelItem => item.idCitaMedica)
+                    </td>*@
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Paciente.Nombres)
+                                </td>
+                                @*<td>
+                        @Html.DisplayFor(modelItem => item.Fecha)
+                    </td>*@
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Hora)
+                                </td>
+                                @*<td>
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>*@
+                                @if (item.TipoConsulta == 1)
+                                {
+                                    <td>
+                                        @*@Html.DisplayFor(modelItem => item.EstadoCita)*@
+                                        <span class="label label-success">General</span>
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>
+                                        <span class="label label-success" style="background-color:lightcoral">Tratamiento</span>
+                                    </td>
+                                }
+                                @if (item.EstadoCita == 1)
+                                {
+                                    <td>
+                                        @*@Html.DisplayFor(modelItem => item.EstadoCita)*@
+                                        <span class="label label-success">Atendido</span>
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>
+                                        <span class="label label-success" style="background-color:lightcoral">Pendiente</span>
+                                    </td>
+                                }
+                                @*<td>
+                                       @Html.DisplayFor(modelItem => item.Estado)
+                                 </td>*@
+                                <td>
+                                    <a href="@Url.Action("Nuevo", "Consultas", new { id = item.idCitaMedica })" class="on-default edit-row" title="Atender Paciente"><i class="fa fa-pencil">Atender Paciente</i></a>
+
+                                </td>
+                            </tr>
+                        }
+                        }
+                    </tbody>
+                    </table>
+                </div>
+            </section>
+       </div>
+  </div>

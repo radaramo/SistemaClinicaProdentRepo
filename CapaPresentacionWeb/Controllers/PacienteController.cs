@@ -28,10 +28,22 @@ namespace CapaPresentacionWeb.Controllers
         }
 
         [HttpPost]
-        public ActionResult Nuevo(entPaciente p)
+        public ActionResult Nuevo(FormCollection frm)
         {
             try
             {
+                entPaciente p = new entPaciente();
+                p.Nombres = frm["txtNombres"].ToString();
+                p.Apellidos = frm["txtApellidos"].ToString();
+                p.Dni = frm["txtDni"].ToString();
+                p.Direccion = frm["txtDireccion"].ToString();
+                p.FechaNacimiento = Convert.ToDateTime(frm["txtFechaNacimiento"].ToString());
+                p.Edad = frm["txtEdad"].ToString();
+                p.Sexo = frm["cboGenero"].ToString();
+                p.Correo = frm["txtCorreo"].ToString();
+                p.Telefono = frm["txtTelefono"].ToString();
+                p.Celular = frm["txtCelular"].ToString();
+
                 Boolean inserto = negPaciente.Instancia.InsertarPaciente(p);
                 //Boolean inserto = true;
                 if (inserto)
@@ -65,10 +77,23 @@ namespace CapaPresentacionWeb.Controllers
         }
 
         [HttpPost]
-        public ActionResult Editar(entPaciente p)
+        public ActionResult Editar(FormCollection frm)
         {
+
             try
             {
+                entPaciente p = new entPaciente();
+                p.idPaciente = Convert.ToInt32(frm["txtIdPaciente"].ToString());
+                p.Nombres = frm["txtNombres"].ToString();
+                p.Apellidos = frm["txtApellidos"].ToString();
+                p.Dni = frm["txtDni"].ToString();
+                p.Direccion = frm["txtDireccion"].ToString();
+                p.FechaNacimiento = Convert.ToDateTime(frm["txtFechaNacimiento"].ToString());
+                p.Edad = frm["txtEdad"].ToString();
+                p.Sexo = frm["cboGenero"].ToString();
+                p.Correo = frm["txtCorreo"].ToString();
+                p.Telefono = frm["txtTelefono"].ToString();
+                p.Celular = frm["txtCelular"].ToString();
 
                 Boolean edito = negPaciente.Instancia.InsertarPaciente(p);
                 if (edito)
@@ -111,6 +136,54 @@ namespace CapaPresentacionWeb.Controllers
 		            return RedirectToAction("Index", "Paciente", new { mensaje = "Error" });
 	            }
           }
+
+            public ActionResult ObtenerPacienteDNI(Int32 PacienteDNI) {
+                try
+                {
+                    entPaciente p = negPaciente.Instancia.ObtenerPacientexDNI(PacienteDNI);
+                    return Json(p, JsonRequestBehavior.AllowGet);
+                    // return View(p);
+                }
+                catch (Exception ex)
+                {
+
+                    return RedirectToAction("Nuevo", "CitasMedicas", new { mensaje = "Error" });
+
+                }
+            }
+
+            public ActionResult ObtenerPacienteID(Int16 PacienteID)
+            {
+                try
+                {
+                    entPaciente p = negPaciente.Instancia.ObtenerPaciente(PacienteID);
+                    return Json(p, JsonRequestBehavior.AllowGet);
+                    // return View(p);
+                }
+                catch (Exception ex)
+                {
+
+                    return RedirectToAction("Nuevo", "CitasMedicas", new { mensaje = "Error" });
+
+                }
+            }
+
+            public ActionResult ObtenerCantidadPacientes()
+            {
+                Int32 p=0;
+                try
+                {
+                    p = negPaciente.Instancia.ListarCantidadPacientes();
+                    return Json(p, JsonRequestBehavior.AllowGet);
+                    // return View(p);
+                }
+                catch (Exception ex)
+                {
+                    
+                    return RedirectToAction("Index", "Inicio", new { mensaje = "Error" });
+
+                }
+            }
        
 
     }

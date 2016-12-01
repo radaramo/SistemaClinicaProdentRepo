@@ -1,0 +1,112 @@
+﻿@model IEnumerable<CapaEntidades.entConsultaMedica>
+
+@{
+    ViewBag.Title = "Historial";
+    Layout = "~/Views/MasterPrincipal.cshtml";
+}
+@section scripts {
+    <script type="text/javascript">
+        $(function () {
+        var idpac = @ViewBag.PacienteID
+        $.ajax({
+            url: '@Url.Action("ObtenerPacienteID", "Paciente")',
+            dataType: "json",
+            type: 'GET',
+            contentType: 'application/json; charset=utf-8',
+            cache: false,
+            data: { PacienteID: idpac },
+            success: function (data) {
+                $("#txtPacienteNombres").text(data.Nombres);
+                $("#txtPacienteApellidos").text(data.Apellidos);
+                $("#txtPacienteEdad").text(data.Edad);
+
+            },
+            error: function () {
+                fn_custommessage("e", "No se encontro ningun paciente", "message_row");
+            }
+
+        });
+ });
+
+    </script>
+}
+<div class="row">
+    <div class="col-lg-12">
+        <section class="panel">
+            <header class="panel-heading">
+                <h2 class="panel-title">Historial Clinico</h2>
+            </header>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label class=" col-md-2 control-label" style="font-weight: bold;">Nombres: </label>
+                    <label id="txtPacienteNombres" class="control-label"></label> 
+                </div>
+                <div class="form-group">
+                    <label class=" col-md-2 control-label" style="font-weight: bold;">Apellidos: </label>
+                    <label id="txtPacienteApellidos" class="control-label"></label>
+                </div>
+                <div class="form-group">
+                    <label class=" col-md-2 control-label" style="font-weight: bold;">Edad: </label>
+                    <label id="txtPacienteEdad" class="control-label"></label>
+                </div>
+                <table class="table table-bordered table-striped mb-none" id="tbhistorial">
+                    <tr>
+                        <th style="display:none">
+                            @Html.DisplayNameFor(model => model.idConsultaHistorial)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Fecha)
+                        </th>
+                        @*<th>
+                            @Html.DisplayNameFor(model => model.Sintomas)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Examenes)
+                        </th>*@
+                        <th>
+                            @Html.DisplayNameFor(model => model.Tratamiento)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Observaciones)
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td style="display:none">
+                                @Html.DisplayFor(modelItem => item.idConsultaHistorial)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Fecha)
+                            </td>
+                            @*<td>
+                                @Html.DisplayFor(modelItem => item.Sintomas)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Examenes)
+                            </td>*@
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Tratamiento)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Observaciones)
+                            </td>
+                            <td>
+                                <a href="@Url.Action("Mostrar", "Historial", new { id = item.idConsultaHistorial })" class="on-default edit-row" title="Historial"><i class="fa fa-list-alt"></i></a>
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+                <div class="form-group">
+                    <div class="col-sm-6 col-sm-offset-4">
+                        @*<a class="mb-xs mt-xs mr-xs btn btn-default" onclick="fn_imprimir()">Imprimir</a>*@
+                        <a class="mb-xs mt-xs mr-xs btn btn-default" href="@Url.Action("Index", "Historial")">Regresar</a>
+                    </div>
+                </div>
+            </div>
+       </section>
+    </div>
+</div>

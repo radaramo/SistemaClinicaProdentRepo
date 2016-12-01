@@ -108,6 +108,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\CitasMedicasController.cs" />
+    <Compile Include="Controllers\ConsultasController.cs" />
+    <Compile Include="Controllers\HistorialController.cs" />
     <Compile Include="Controllers\InicioController.cs" />
     <Compile Include="Controllers\IntranetController.cs" />
     <Compile Include="Controllers\PacienteController.cs" />
@@ -269,9 +272,11 @@
     <Content Include="Estilos\Intranet\images\invoice-logo.png" />
     <Content Include="Estilos\Intranet\images\jstree-dark.png" />
     <Content Include="Estilos\Intranet\images\jstree.png" />
+    <Content Include="Estilos\Intranet\images\loggedin_home_header1.png" />
     <Content Include="Estilos\Intranet\images\logo-default.png" />
     <Content Include="Estilos\Intranet\images\logo-light.png" />
     <Content Include="Estilos\Intranet\images\logo.png" />
+    <Content Include="Estilos\Intranet\images\no-user.png" />
     <Content Include="Estilos\Intranet\images\patterns\az_subtle.png" />
     <Content Include="Estilos\Intranet\images\patterns\blizzard.png" />
     <Content Include="Estilos\Intranet\images\patterns\bright_squares.png" />
@@ -2102,6 +2107,33 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Paciente\Eliminar.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\CitasMedicas\Nuevo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\CitasMedicas\Editar.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Consultas\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Consultas\Nuevo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\CitasMedicas\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Historial\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Historial\Historial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Intranet\Perfil.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Historial\Mostrar.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

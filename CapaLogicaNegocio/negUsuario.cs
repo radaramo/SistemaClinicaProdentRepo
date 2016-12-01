@@ -38,6 +38,34 @@ namespace CapaLogicaNegocio
                 throw ex;
             }
         }
+
+        public entUsuario ObtenerUsuario(Int16 idUsario)
+        {
+            try
+            {
+                entUsuario u = datUsuario.Instancia.ObtenerUsuario(idUsario);
+                return u;
+            }
+            catch (Exception ex)
+            {
+                
+                throw ex;
+            }
+        }
+
+        public Boolean EditarPerfil(entUsuario u)
+        {
+            try
+            {
+                return datUsuario.Instancia.EditarUsuario(u);
+            }
+            catch (Exception ex)
+            {
+                
+                throw ex;
+            }
+        }
+
         #endregion metodos
     }
 }

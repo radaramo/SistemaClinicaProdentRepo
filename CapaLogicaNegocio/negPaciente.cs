@@ -32,6 +32,18 @@ namespace CapaLogicaNegocio
             }
         }
 
+        public List<entPaciente> UltimosPacientesRegistrados()
+        {
+            try
+            {
+                return datPaciente.Instancia.UltimosPacientesRegistrados();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public Boolean InsertarPaciente(entPaciente p)
         {
             try
@@ -56,10 +68,36 @@ namespace CapaLogicaNegocio
             }
         }
 
+        public entPaciente ObtenerPacientexDNI(Int32 PacienteDNI)
+        {
+            try
+            {
+                return datPaciente.Instancia.ObtenerPacientexDNI(PacienteDNI);
+            }
+            catch (Exception e)
+            {
+                
+                throw e;
+            }
+        }
+
         public Boolean EiminarPaciente(Int16 idPaciente) {
             try
             {
                 return datPaciente.Instancia.EiminarPaciente(idPaciente);
+            }
+            catch (Exception e)
+            {
+                
+                throw e;
+            }
+        }
+
+        public Int32 ListarCantidadPacientes()
+        {
+            try
+            {
+                return datPaciente.Instancia.ListarCantidadPacientes();
             }
             catch (Exception e)
             {

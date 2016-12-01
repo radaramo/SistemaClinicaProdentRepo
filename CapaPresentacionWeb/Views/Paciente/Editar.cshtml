@@ -13,7 +13,7 @@
             fn_plugin();
         }
         function fn_plugin() {
-            $(".txtFechaNacimiento").datepicker({
+            $("#txtFechaNacimiento").datepicker({
                 format: 'dd/mm/yyyy',
                 changeMonth: true,
                 changeYear: true
@@ -29,119 +29,89 @@
             </header>
             <div class="panel-body">
                 <div class="form-horizontal form-bordered">
-
-                    @using (Html.BeginForm())
-                    {
-                        @Html.AntiForgeryToken()
-                        @Html.ValidationSummary(true)
-
-                        <fieldset>
-                            <div class="editor-label" style="display:none">
-                                @Html.LabelFor(model => model.idPaciente)
+                    <form method="post" action="Editar" enctype="multipart/form-data">
+                        <input type="hidden" name="txtIdPaciente" value="@Model.idPaciente" />
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="inputPlaceholder">Nombres</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="txtNombres" value="@Model.Nombres" required>
                             </div>
-                            <div class="editor-field" style="display:none">
-                                @Html.EditorFor(model => model.idPaciente)
-                                @Html.ValidationMessageFor(model => model.idPaciente)
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="inputPlaceholder">Apellidos</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="txtApellidos" value="@Model.Apellidos">
                             </div>
-
-                            <div class="form-group">
-                                <div class="editor-label">
-                                    @Html.LabelFor(model => model.Nombres, new { @class = "col-md-3 control-label" })
-                                </div>
-
-                                <div class="editor-field col-md-6">
-                                    @Html.TextBoxFor(model => model.Nombres, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.Nombres)
-                                </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="inputPlaceholder">Dni</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="txtDni" maxlength="8" value="@Model.Dni">
                             </div>
-                            <div class="form-group">
-                                <div class="editor-label">
-                                    @Html.LabelFor(model => model.Apellidos, new { @class = "col-md-3 control-label" })
-                                </div>
-                                <div class="editor-field col-md-6">
-                                    @Html.TextBoxFor(model => model.Apellidos, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.Apellidos)
-                                </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="inputPlaceholder">Direccion</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="txtDireccion" value="@Model.Direccion">
                             </div>
-                            <div class="form-group">
-                                <div class="editor-label">
-                                    @Html.LabelFor(model => model.Dni, new { @class = "col-md-3 control-label" })
-                                </div>
-                                <div class="editor-field col-md-6">
-                                    @Html.TextBoxFor(model => model.Dni, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.Dni)
-                                </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="inputPlaceholder">Fecha Nacimiento</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="txtFechaNacimiento" id="txtFechaNacimiento" value="@Model.FechaNacimiento.ToShortDateString()">
                             </div>
-                            <div class="form-group">
-                                <div class="editor-label">
-                                    @Html.LabelFor(model => model.Direccion, new { @class = "col-md-3 control-label" })
-                                </div>
-                                <div class="editor-field col-md-6">
-                                    @Html.TextBoxFor(model => model.Direccion, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.Direccion)
-                                </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="inputPlaceholder">Edad</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="txtEdad" value="@Model.Edad">
                             </div>
-                            <div class="form-group">
-                                <div class="editor-label">
-                                    @Html.LabelFor(model => model.FechaNacimiento, new { @class = "col-md-3 control-label" })
-                                </div>
-                                <div class="editor-field col-md-6">
-                                    @Html.TextBoxFor(model => model.FechaNacimiento, "{0:dd/MM/yyyy}" , new { @class = "form-control txtFechaNacimiento" })
-                                    @Html.ValidationMessageFor(model => model.FechaNacimiento)
-                                </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="inputPlaceholder">Genero</label>
+                            <div class="col-md-6">
+                                @if (Model.Sexo == "M")
+                                {
+                                <select name="cboGenero" class="form-control mb-md">
+                                    <option>Selecciona tu genero</option>
+                                    <option value="M" selected="selected">Masculino</option>
+                                    <option value="F">Femenino</option>
+                                </select>
+                                }
+                                else { 
+                                 <select name="cboGenero" class="form-control mb-md">
+                                    <option>Selecciona tu genero</option>
+                                    <option value="M">Masculino</option>
+                                    <option value="F" selected="selected">Femenino</option>
+                                </select>                      
+                                }
+                               
                             </div>
-                            <div class="form-group">
-                                <div class="editor-label">
-                                    @Html.LabelFor(model => model.Edad, new { @class = "col-md-3 control-label" })
-                                </div>
-                                <div class="editor-field col-md-6">
-                                    @Html.TextBoxFor(model => model.Edad, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.Edad)
-                                </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="inputPlaceholder">Correo</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="txtCorreo" value="@Model.Correo">
                             </div>
-                            <div class="form-group">
-                                <div class="editor-label">
-                                    @Html.LabelFor(model => model.Sexo, new { @class = "col-md-3 control-label" })
-                                </div>
-                                <div class="editor-field col-md-6">
-                                    @Html.TextBoxFor(model => model.Sexo, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.Sexo)
-                                </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="inputPlaceholder">Telefono</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="txtTelefono" maxlength="8" value="@Model.Telefono">
                             </div>
-                            <div class="form-group">
-                                <div class="editor-label">
-                                    @Html.LabelFor(model => model.Correo, new { @class = "col-md-3 control-label" })
-                                </div>
-                                <div class="editor-field col-md-6">
-                                    @Html.TextBoxFor(model => model.Correo, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.Correo)
-                                </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="inputPlaceholder">Celular</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="txtCelular" maxlength="9" value="@Model.Celular">
                             </div>
-                            <div class="form-group">
-                                <div class="editor-label">
-                                    @Html.LabelFor(model => model.Telefono, new { @class = "col-md-3 control-label" })
-                                </div>
-                                <div class="editor-field col-md-6">
-                                    @Html.TextBoxFor(model => model.Telefono, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.Telefono)
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="editor-label">
-                                    @Html.LabelFor(model => model.Celular, new { @class = "col-md-3 control-label" })
-                                </div>
-                                <div class="editor-field col-md-6">
-                                    @Html.TextBoxFor(model => model.Celular, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.Celular)
-                                </div>
-                            </div>
-
-                            <div class="col-sm-6 col-sm-offset-3">
-                                <input type="submit" class="mb-xs mt-xs mr-xs btn btn-lg btn-primary" value="Guardar" />
-                                <a class="mb-xs mt-xs mr-xs btn btn-lg btn-default" href="@Url.Action("Index", "Paciente")">Regresar</a>
-                            </div>
-                        </fieldset>
-                    }
+                        </div>
+                        <div class="col-sm-6 col-sm-offset-3">
+                            <input type="submit" class="mb-xs mt-xs mr-xs btn btn-lg btn-primary" value="Guardar" />
+                            <a class="mb-xs mt-xs mr-xs btn btn-lg btn-default" href="@Url.Action("Index", "Paciente")">Regresar</a>
+                        </div>
+                    </form>
+              
                 </div>
             </div>
         </section>

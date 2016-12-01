@@ -39,7 +39,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="entCitaMedica.cs" />
+    <Compile Include="entConsultaMedica.cs" />
+    <Compile Include="entMedico.cs" />
     <Compile Include="entPaciente.cs" />
+    <Compile Include="entPersona.cs" />
+    <Compile Include="entTipoUsuario.cs" />
     <Compile Include="entUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

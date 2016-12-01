@@ -1,0 +1,82 @@
+﻿@model CapaEntidades.entCitaMedica
+
+@{
+    ViewBag.Title = "Nuevo";
+    Layout = "~/Views/MasterPrincipal.cshtml";
+}
+
+<div class="row">
+    <div class="col-xs-12">
+        <section class="panel">
+            <header class="panel-heading">
+                <h2 class="panel-title">Registrar Consulta</h2>
+            </header>
+            <div class="panel-body">
+                <div class="form-horizontal form-bordered">
+                    <form method="post" action="Nuevo" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <div class="form-group" style="display:none">
+                                <label class="col-md-3 control-label" for="inputPlaceholder">ID: </label>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control" name="txtidCitaMedica" id="txtidPaciente" value="@Model.idCitaMedica">
+                                </div>
+                            </div>
+                            <div class="form-group" style="display:none">
+                                <label class="col-md-3 control-label" for="inputPlaceholder">ID: </label>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control" name="txtidPaciente" id="txtidPaciente" value="@Model.Paciente.idPaciente">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="inputPlaceholder">Nombres: </label>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control" name="txtNombrePaciente" id="txtNombrePaciente" value="@Model.Paciente.Nombres" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="inputPlaceholder">Apellidos: </label>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control" name="txtApellidosPaciente" id="txtApellidosPaciente" value="@Model.Paciente.Apellidos" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="inputPlaceholder">Edad: </label>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control" name="txtEdadPaciente" id="txtEdadPaciente" value="@Model.Paciente.Edad" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="textareaDefault">Sintomas</label>
+                            <div class="col-md-6">
+                                <textarea class="form-control" name="txtSintomas" rows="3" data-plugin-maxlength="" maxlength="140" style="margin-top: 0px; margin-bottom: 0px; height: 93px;"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="textareaDefault">Examenes</label>
+                            <div class="col-md-6">
+                                <textarea class="form-control" name="txtExamenes" rows="3" data-plugin-maxlength="" maxlength="140" style="margin-top: 0px; margin-bottom: 0px; height: 93px;"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="textareaDefault">Tratamiento</label>
+                            <div class="col-md-6">
+                                <textarea class="form-control" name="txtTratamiento" rows="3" data-plugin-maxlength="" maxlength="140" style="margin-top: 0px; margin-bottom: 0px; height: 93px;"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="textareaDefault">Observaciones</label>
+                            <div class="col-md-6">
+                                <textarea class="form-control" name="txtObservaciones" rows="3" data-plugin-maxlength="" maxlength="140" style="margin-top: 0px; margin-bottom: 0px; height: 93px;"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-sm-offset-3">
+                            <input type="submit" class="mb-xs mt-xs mr-xs btn btn-lg btn-primary" value="Guardar" />
+                            <a class="mb-xs mt-xs mr-xs btn btn-lg btn-default" href="@Url.Action("Index", "Consultas")">Regresar</a>
+                        </div>
+                        </form>
+                        </div>
+                </div>
+            </section>
+        </div>
+    </div>

@@ -45,7 +45,62 @@ namespace CapaPresentacionWeb.Controllers
 
         public ActionResult Principal()
         {
-               return View();
+            entUsuario prop = (entUsuario)Session["usuario"];
+            Int32 person = prop.Persona.idPersona;
+            ViewBag.PersonaP = person;
+            return View();
+        }
+
+        public ActionResult Perfil(Int16 id)
+        {
+            try
+            {              
+                entUsuario u = negUsuario.Instancia.ObtenerUsuario(id);
+                return View(u);
+            }
+            catch (Exception ex)
+            {
+
+                return RedirectToAction("Principal", "Intranet");
+            }
+        }
+
+        [HttpPost]
+        public ActionResult Perfil(FormCollection frm)
+        {
+            try
+            {
+                entUsuario u = new entUsuario();
+
+                entPersona p = new entPersona();
+                p.idPersona = Convert.ToInt32(frm["txtidPersona"].ToString());
+                p.Nombres = frm["txtNombres"].ToString();
+                p.Apellidos = frm["txtApellidos"].ToString();
+                p.Direccion = frm["txtDireccion"].ToString();
+                p.Telefono = frm["txtTelefono"].ToString();
+                u.Persona = p;
+                u.idUsuario = Convert.ToInt32(frm["txtidUsuario"].ToString());
+                u.UserName = frm["txtUserName"].ToString();
+                u.Password = frm["txtPassword"].ToString();
+
+                Boolean edito = negUsuario.Instancia.EditarPerfil(u);
+                 if (edito)
+                {
+
+                    return RedirectToAction("Principal",
+                        new { mensaje = "Intranet" });
+                }
+                else
+                {
+                    ViewBag.mensaje = "Error";
+                    return View();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return RedirectToAction("Principal", "Intranet");
+            }
         }
 
         public ActionResult CerrarSesion()

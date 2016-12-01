@@ -1,0 +1,135 @@
+﻿@model CapaEntidades.entCitaMedica
+@{
+    ViewBag.Title = "Editar";
+    Layout = "~/Views/MasterPrincipal.cshtml";
+}
+@section scripts {
+    <script type="text/javascript">
+        $(function () {
+            fn_init();
+        });
+        function fn_init() {
+            fn_plugin();
+        }
+        function fn_plugin() {
+            $("#txtFechaCitaMedica").datepicker({
+                format: 'dd/mm/yyyy',
+                changeMonth: true,
+                changeYear: true
+            });
+        }
+    </script>
+}
+<div class="row">
+    <div class="col-xs-12">
+        <section class="panel">
+            <div id="message_row">
+            </div>
+            <header class="panel-heading">
+                <h2 class="panel-title">Editar Cita Medica</h2>
+            </header>
+            <div class="panel-body">
+                <div class="form-horizontal form-bordered">
+                    <form method="post" action="Nuevo" enctype="multipart/form-data">
+                        <input type="hidden" name="txtIdCitaMedica" value="@Model.idCitaMedica" />
+                        <div class="form-group">
+                            <label id="Label16" class="col-md-3 control-label">Paciente: </label>
+                            <div class="col-xs-12 col-sm-7 col-md-5 cnt-controles">
+                                <div class="input-group ">
+                                    <input id="txtDni" class="form-control" type="text" placeholder="Ingrese DNI" maxlength="8" />
+                                    <span class="input-group-btn">
+                                        <a id="btnSearchPaciente" class="btn btn-primary">
+                                            <i class="fa fa-search"></i>
+                                        </a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group" style="display:none">
+                            <label class="col-md-3 control-label" for="inputPlaceholder">ID: </label>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" name="txtidPaciente" id="txtidPaciente" value="@Model.Paciente.idPaciente"required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="inputPlaceholder">Nombres: </label>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" name="txtNombrePaciente" id="txtNombrePaciente" value="@Model.Paciente.Nombres" required disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="inputPlaceholder">Apellidos: </label>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" name="txtApellidosPaciente" id="txtApellidosPaciente" value="@Model.Paciente.Apellidos" required disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="inputPlaceholder">Medico: </label>
+                            <div class="col-md-5">
+                                <select name="cboMedicos" class="form-control mb-md">
+                                    <option>Seleccione medico</option>
+                                    @foreach (CapaEntidades.entMedico c in CapaLogicaNegocio.negMedico.Instancia.ListarMedicos())
+                                    {
+                                        if (@Model.Medico.idMedico == @c.idMedico)
+                                        {
+                                            <option value="@c.idMedico" selected="selected">@c.Persona.Nombres @c.Persona.Apellidos</option>
+                                        }
+                                        <option value="@c.idMedico">@c.Persona.Nombres @c.Persona.Apellidos</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="inputPlaceholder">Fecha: </label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="txtFechaCitaMedica" id="txtFechaCitaMedica" value="@Model.Fecha.ToShortDateString()">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Hora: </label>
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-clock-o"></i>
+                                    </span>
+                                    <input type="text" data-plugin-timepicker class="form-control" name="txtHora" value="@Model.Hora">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="inputPlaceholder">Descripcion: </label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="txtDescripcion" value="@Model.Descripcion" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="inputPlaceholder">Tipo Consulta: </label>
+                            <div class="col-md-5">
+                                @if (Model.TipoConsulta == 1)
+                                {
+                                <select name="cboTipoConsulta" class="form-control mb-md">
+                                    <option>Seleccione tipo consulta</option>
+                                    <option value="1" selected="selected">General</option>
+                                    <option value="2">Tratamiento</option>
+                                </select>
+                                }
+                                else { 
+                                 <select name="cboTipoConsulta" class="form-control mb-md">
+                                    <option>Seleccione tipo consulta</option>
+                                    <option value="1">General</option>
+                                    <option value="2" selected="selected">Tratamiento</option>
+                                </select>
+                                }
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-sm-offset-3">
+                            <input type="submit" class="mb-xs mt-xs mr-xs btn btn-lg btn-primary" value="Guardar" />
+                            <a class="mb-xs mt-xs mr-xs btn btn-lg btn-default" href="@Url.Action("Index", "CitasMedicas")">Regresar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
